@@ -27,3 +27,14 @@ def merge_sorted_list(l1, l2):
         j += 1
 
     return merge_list
+
+
+def median_two_sorted_list(l1, l2):
+    merge_list = merge_sorted_list(l1, l2)
+
+    if len(merge_list) % 2 == 1:
+        return merge_list[len(merge_list)//2]
+    else:
+        m1 = merge_list[(len(merge_list)//2)-1]
+        m2 = merge_list[len(merge_list)//2]
+        return (m1 + m2) / 2
